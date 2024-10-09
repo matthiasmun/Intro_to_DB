@@ -11,18 +11,18 @@ CREATE TABLE IF NOT EXISTS Authors (
     author_name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS Customer (
+CREATE TABLE IF NOT EXISTS Customers (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_name VARCHAR(215) NOT NULL,  -- Corrected to VARCHAR(215)
-    email VARCHAR(215) NOT NULL,           -- Corrected to VARCHAR(215)
-    address TEXT NOT NULL                   -- Corrected to TEXT
+    customer_name VARCHAR(215) NOT NULL,
+    email VARCHAR(215) NOT NULL,
+    address TEXT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT,
     order_date DATE NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
 CREATE TABLE IF NOT EXISTS Order_Details (
