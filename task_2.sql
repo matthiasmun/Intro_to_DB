@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS Books (
     book_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     author_id INT,
-    price DECIMAL(10, 2) NOT NULL, -- Added price column
+    price DECIMAL(10, 2) NOT NULL,
     FOREIGN KEY (author_id) REFERENCES Authors(author_id)
 );
 
@@ -13,9 +13,9 @@ CREATE TABLE IF NOT EXISTS Authors (
 
 CREATE TABLE IF NOT EXISTS Customers (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    address VARCHAR(255) NOT NULL
+    customer_name VARCHAR(215) NOT NULL,  -- Changed to VARCHAR(215)
+    email VARCHAR(215) NOT NULL,           -- Changed to VARCHAR(215)
+    address TEXT NOT NULL                   -- Changed to TEXT
 );
 
 CREATE TABLE IF NOT EXISTS Orders (
